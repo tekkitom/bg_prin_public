@@ -1,6 +1,10 @@
 #include "gui.h"
 #include "ui_gui.h"
 
+/**
+ * @brief Konstruktor
+ * @param parent (leer)
+ */
 GUI::GUI(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::GUI)
@@ -19,11 +23,17 @@ GUI::GUI(QWidget *parent)
     dialogAssignMemberPatch = nullptr;
 }
 
+/**
+ * @brief Destruktor
+ */
 GUI::~GUI()
 {
     delete ui;
 }
 
+/**
+ * @brief Liste der Beete anzeigen.
+ */
 void GUI::showListPatches(){
     vector<Patch*> tempPatches;
     QString tempText;
@@ -39,9 +49,16 @@ void GUI::showListPatches(){
         }
 }
 
+/**
+ * @brief Liste der Mitgleider anzeigen (noch leer)
+ */
 void GUI::showListMembers(){
 
 }
+
+/**
+ * @brief Dialog "Beet pachten" anzeigen
+ */
 void GUI::assignPatchMember(){
     dialogAssignMemberPatch = new DialogAssignMemberPatch(this);
     short tempMemberNr = -1;
@@ -58,18 +75,30 @@ void GUI::assignPatchMember(){
     dialogAssignMemberPatch = nullptr;
 }
 
+/**
+ * @brief Pacht stornieren (noch leer).
+ */
 void GUI::releasePatchMember(){
 
 }
 
+/**
+ * @brief Beete anlegen.
+ */
 void GUI::ceatePatches(){
     association->ceatePatches();
 }
 
+/**
+ * @brief Ein Mitglied anlegen.
+ */
 void GUI::newMember(){
     association->newMember();
 }
 
+/**
+ * @brief Dialog "Liste der Beete eines Mitglieds" anzeigen.
+ */
 void GUI::showMemberPatches(){
     if(nullptr == dialogListMemberPatch)
         dialogListMemberPatch = new DialogListMemberPatch(association, this);

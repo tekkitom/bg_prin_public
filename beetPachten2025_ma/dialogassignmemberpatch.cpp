@@ -1,6 +1,10 @@
 #include "dialogassignmemberpatch.h"
 #include "ui_dialogassignmemberpatch.h"
 
+/**
+ * @brief Konstruktor
+ * @param parent GUI (Haupt-widget)
+ */
 DialogAssignMemberPatch::DialogAssignMemberPatch(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::DialogAssignMemberPatch)
@@ -10,6 +14,9 @@ DialogAssignMemberPatch::DialogAssignMemberPatch(QWidget *parent)
     connect(ui->edtPatchNr, &QSpinBox::valueChanged, this, &DialogAssignMemberPatch::setPatchNr);
 }
 
+/**
+ * @brief Destruktor
+ */
 DialogAssignMemberPatch::~DialogAssignMemberPatch()
 {
     delete ui;

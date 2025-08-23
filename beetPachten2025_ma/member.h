@@ -11,7 +11,7 @@ public:
     static const unsigned int maxCountPatchesByMember = 10;
 
     Member(short memberNr);
-    bool istPatchInUse(short patchNr);
+    bool isPatchInUse(short patchNr);
     bool assignPatchNr(const short patchNr);
 
     short getMemberNr() const;

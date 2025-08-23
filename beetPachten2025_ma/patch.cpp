@@ -1,13 +1,22 @@
 #include "patch.h"
-
+/**
+ * @brief defaultNr für PatchNr festlegen.
+ */
 short Patch::nextPatchNr = 1;
 
+/**
+ * @brief Konstruktor
+ */
 Patch::Patch() {
     patchNr = nextPatchNr++;
     field = 0;
     quality = Patch::goodQuality;
 }
 
+/**
+ * @brief Konstruktor
+ * @param field FelfNr
+ */
 Patch::Patch(short field) {
     patchNr = nextPatchNr++;
     this->field = field;
@@ -29,6 +38,10 @@ void Patch::setField(short newField)
     field = newField;
 }
 
+/**
+ * @brief Abfrage der Qualitätsstufe. Umwandluhg int -> String
+ * @return String der Qualitätsstufe.
+ */
 QString Patch::getQuality()
 {
     QString retValue;

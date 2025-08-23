@@ -1,5 +1,8 @@
 #include "association.h"
 
+/**
+ * @brief Konstruktor
+ */
 Association::Association() {
     for (int i = 0; i < maxCountMembersPatches; ++i) {
         patches[i] = nullptr;
@@ -7,6 +10,10 @@ Association::Association() {
     nextMemberNr = 1;
 }
 
+/**
+ * @brief Liste aller Beete heraussuchen.
+ * @return Liste aller Beete
+ */
 vector<Patch*> Association::getListAllPatches() const{
     vector<Patch*> tempPatches;
 
@@ -18,6 +25,10 @@ vector<Patch*> Association::getListAllPatches() const{
     return tempPatches;
 }
 
+/**
+ * @brief Liste aller Vereinsmitglieder heraussuchen.
+ * @return Liste aller Vereinsmitglieder
+ */
 vector<Member*> Association::getListAllMembers() const{
     vector<Member*> tempMembers;
 
@@ -29,12 +40,18 @@ vector<Member*> Association::getListAllMembers() const{
     return tempMembers;
 }
 
+/**
+ * @brief Beet pachten
+ * @param memberNr Mitgliedsnummer
+ * @param patchNr BeetNummer
+ * @return true = hat funktioniert.
+ */
 bool Association::assignBatchMember(unsigned short memberNr, unsigned short patchNr){
     Member *tempMember = nullptr;
 
     for (Member *tM : members) {
         if(nullptr != tM){
-            if(tM->istPatchInUse(patchNr)){
+            if(tM->isPatchInUse(patchNr)){
                 return false;
             }
             else{
@@ -52,21 +69,34 @@ bool Association::assignBatchMember(unsigned short memberNr, unsigned short patc
     return false;
 }
 
+/**
+ * @brief Liste aller Beete eines Mitglieds heraussuchen.
+ * @param memberNr Mitgliedsnummer
+ * @return Liste aller Beete eines Mitglieds
+ */
 vector<short> Association::getMemberPatches(short memberNr){
     vector<short> patchList;
     for (Member *tM : members) {
-        if(nullptr != tM){
+        if(nullptr != tM && tM->getMemberNr() == memberNr){
             patchList = tM->getMyPatcesNrs();
         }
     }
     return patchList;
 }
 
+/**
+ * @brief Liste aller Beete vorbereiten.
+ *
+ * Liste aller Beete vorbereiten. Alle Beete bekommen default Werte zugeteilt.
+ */
 void Association::ceatePatches(){
     for(int i = 0; i < maxCountMembersPatches; ++i)
         patches[i] = new Patch;
 }
 
+/**
+ * @brief ein Mitglied anlegen.
+ */
 void Association::newMember(){
     Member *tempMember = nullptr;
 
