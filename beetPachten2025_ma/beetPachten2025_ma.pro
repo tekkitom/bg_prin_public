@@ -10,6 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     association.cpp \
+    dialogassignmemberpatch.cpp \
+    dialoglistmemberpatch.cpp \
     main.cpp \
     gui.cpp \
     member.cpp \
@@ -17,11 +19,15 @@ SOURCES += \
 
 HEADERS += \
     association.h \
+    dialogassignmemberpatch.h \
+    dialoglistmemberpatch.h \
     gui.h \
     member.h \
     patch.h
 
 FORMS += \
+    dialogassignmemberpatch.ui \
+    dialoglistmemberpatch.ui \
     gui.ui
 
 # Default rules for deployment.

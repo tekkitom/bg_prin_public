@@ -1,10 +1,17 @@
 #include "patch.h"
 
-short Patch::nextNr = 1;
+short Patch::nextPatchNr = 1;
 
 Patch::Patch() {
-    patchNr = nextNr++;
+    patchNr = nextPatchNr++;
     field = 0;
+    quality = Patch::goodQuality;
+}
+
+Patch::Patch(short field) {
+    patchNr = nextPatchNr++;
+    this->field = field;
+    quality = Patch::goodQuality;
 }
 
 short Patch::getPatchNr() const
@@ -20,4 +27,31 @@ short Patch::getField() const
 void Patch::setField(short newField)
 {
     field = newField;
+}
+
+QString Patch::getQuality()
+{
+    QString retValue;
+    switch(quality){
+    case badQuality:
+        retValue = "schlechter Boden";
+        break;
+    case prettyBadQuality:
+        retValue = "halbwegs schlechter Boden";
+        break;
+    case prettyGoodQuality:
+        retValue = "halbwegs guter Boden";
+        break;
+    case goodQuality:
+        retValue = "guter Boden";
+        break;
+    case excelenteQuality:
+        retValue = "sehr guter Boden";
+        break;
+    case none:
+        retValue = "Bodenqualität unbekannt";
+        break;
+    }
+
+    return retValue;
 }

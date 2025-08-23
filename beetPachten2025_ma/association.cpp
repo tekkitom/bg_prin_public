@@ -2,12 +2,12 @@
 
 Association::Association() {
     for (int i = 0; i < maxCountMembersPatches; ++i) {
-        members[i] = nullptr;
         patches[i] = nullptr;
     }
+    nextMemberNr = 1;
 }
 
-vector<Patch*> Association::getListAllPtches() const{
+vector<Patch*> Association::getListAllPatches() const{
     vector<Patch*> tempPatches;
 
     for(int i = 0; i < maxCountMembersPatches; ++i){
@@ -21,10 +21,56 @@ vector<Patch*> Association::getListAllPtches() const{
 vector<Member*> Association::getListAllMembers() const{
     vector<Member*> tempMembers;
 
-    for(int i = 0; i < maxCountMembersPatches; ++i){
-        if(nullptr != members[i])
-            tempMembers.push_back(members[i]);
+    for(Member *tM : members){
+        if(nullptr != tM)
+            tempMembers.push_back(tM);
     }
 
     return tempMembers;
+}
+
+bool Association::assignBatchMember(unsigned short memberNr, unsigned short patchNr){
+    Member *tempMember = nullptr;
+
+    for (Member *tM : members) {
+        if(nullptr != tM){
+            if(tM->istPatchInUse(patchNr)){
+                return false;
+            }
+            else{
+                if(tM->getMemberNr() == memberNr){
+                    tempMember = tM;
+                }
+            }
+        }
+    }
+    if(nullptr != tempMember){
+        tempMember->assignPatchNr(patchNr);
+        return true;
+    }
+
+    return false;
+}
+
+vector<short> Association::getMemberPatches(short memberNr){
+    vector<short> patchList;
+    for (Member *tM : members) {
+        if(nullptr != tM){
+            patchList = tM->getMyPatcesNrs();
+        }
+    }
+    return patchList;
+}
+
+void Association::ceatePatches(){
+    for(int i = 0; i < maxCountMembersPatches; ++i)
+        patches[i] = new Patch;
+}
+
+void Association::newMember(){
+    Member *tempMember = nullptr;
+
+    tempMember = new Member(nextMemberNr++);
+    members.push_back(tempMember);
+    return;
 }

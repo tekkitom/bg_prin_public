@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <vector>
 #include "association.h"
+#include "dialogassignmemberpatch.h"
+#include "dialoglistmemberpatch.h"
 
 using namespace std;
 
@@ -26,9 +28,14 @@ public slots:
     void showListMembers();
     void assignPatchMember();
     void releasePatchMember();
+    void ceatePatches();
+    void newMember();
+    void showMemberPatches();
 
 private:
     Ui::GUI *ui;
     Association *association;
+    DialogAssignMemberPatch *dialogAssignMemberPatch;
+    DialogListMemberPatch *dialogListMemberPatch;
 };
 #endif // GUI_H
