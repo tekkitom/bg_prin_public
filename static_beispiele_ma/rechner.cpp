@@ -10,6 +10,10 @@ unsigned short Rechner::nextNr = 1;
  */
 Rechner::Rechner() {
     nr = nextNr++;
+
+    zahl1 = 0;
+    zahl2 = 0;
+    ergebnis = 0;
 }
 
 /**
