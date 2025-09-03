@@ -35,18 +35,18 @@ GUI::~GUI()
  * @brief Liste der Beete anzeigen.
  */
 void GUI::showListPatches(){
-    vector<Patch*> tempPatches;
+    // vector<Patch*> tempPatches;
     QString tempText;
 
     ui->listPatches->clear();
-    tempPatches = association->getListAllPatches();
-    if(tempPatches.size()>0)
-        for(unsigned int i = 0; i < tempPatches.size(); i++){
-            tempText = QString::number(tempPatches[i]->getPatchNr());
-            tempText.append(" ");
-            tempText.append(tempPatches[i]->getQuality());
-            ui->listPatches->addItem(tempText);
-        }
+    //tempPatches = association->getListAllPatches();
+
+    for(short patchNr = 0; patchNr < Association::maxCountMembersPatches; patchNr++){
+        tempText = QString::number(patchNr);
+        tempText.append(" ");
+        tempText.append(association->getPatchQuality(patchNr));
+        ui->listPatches->addItem(tempText);
+    }
 }
 
 /**

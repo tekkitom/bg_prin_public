@@ -4,22 +4,28 @@
 #include "member.h"
 #include "patch.h"
 #include <vector>
+#include <QObject>
 
 using namespace std;
 
-class Association
+class Association : public QObject
 {
+    Q_OBJECT
+
 public:
     static const unsigned short maxCountMembersPatches = 1000;
     Association();
-    vector<Patch *> getListAllPatches() const;
-    vector<Member*> getListAllMembers() const;
+    ~Association();
 
     void ceatePatches();
     void newMember();
 
     bool assignBatchMember(unsigned short memberNr, unsigned short patchNr);
     vector<short> getMemberPatches(short memberNr);
+
+public slots:
+    QString getPatchQuality(short patchNr);
+    short getFieldNr(short patchNr);
 
 private:
     Patch* patches[maxCountMembersPatches];

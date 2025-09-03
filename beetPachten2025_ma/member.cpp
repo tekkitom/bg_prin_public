@@ -1,6 +1,8 @@
 #include "member.h"
 #include "patch.h"
 
+short Member::nextMemberNr = 1;
+
 /**
  * @brief Konstruktor
  * @param memberNr MitgliedsNr
@@ -11,6 +13,14 @@ Member::Member(short memberNr) {
 
     this->memberNr = memberNr;
 }
+
+Member::Member() {
+    for(unsigned short i = 0; i < maxCountPatchesByMember; i++)
+        myPatches[i] = -1;
+
+    this->memberNr = nextMemberNr++;
+}
+
 
 /**
  * @brief Abfrage, ob Beet gepachtet ist

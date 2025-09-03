@@ -10,6 +10,7 @@ class Member
 public:
     static const unsigned int maxCountPatchesByMember = 10;
 
+    Member();
     Member(short memberNr);
     bool isPatchInUse(short patchNr);
     bool assignPatchNr(const short patchNr);
@@ -20,6 +21,8 @@ public:
 private:
     short myPatches[maxCountPatchesByMember];
     short memberNr;
+
+    static short nextMemberNr;
 };
 
 #endif // MEMBER_H

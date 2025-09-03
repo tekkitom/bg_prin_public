@@ -3,41 +3,41 @@
 /**
  * @brief Konstruktor
  */
-Association::Association() {
+Association::Association() : QObject() {
     for (int i = 0; i < maxCountMembersPatches; ++i) {
         patches[i] = nullptr;
     }
     nextMemberNr = 1;
 }
 
-/**
- * @brief Liste aller Beete heraussuchen.
- * @return Liste aller Beete
- */
-vector<Patch*> Association::getListAllPatches() const{
-    vector<Patch*> tempPatches;
+Association::~Association(){
 
-    for(int i = 0; i < maxCountMembersPatches; ++i){
-        if(nullptr != patches[i])
-            tempPatches.push_back(patches[i]);
-    }
-
-    return tempPatches;
 }
 
 /**
- * @brief Liste aller Vereinsmitglieder heraussuchen.
- * @return Liste aller Vereinsmitglieder
+ * @brief Bodenqualität des Beets zurück geben
+ * @param patchNr BeetNr
+ * @return Qualitätsangebe als QString
  */
-vector<Member*> Association::getListAllMembers() const{
-    vector<Member*> tempMembers;
-
-    for(Member *tM : members){
-        if(nullptr != tM)
-            tempMembers.push_back(tM);
+QString Association::getPatchQuality(short patchNr){
+    for(short i = 0; i < maxCountMembersPatches; i++){
+        if(patches[i]->getPatchNr() == patchNr)
+            return patches[i]->getQuality();
     }
+    return "";
+}
 
-    return tempMembers;
+/**
+ * @brief Nummer des Felds, auf dem das Beet ist
+ * @param patchNr BeetNr
+ * @return FeldNr
+ */
+short Association::getFieldNr(short patchNr){
+    for(short i = 0; i < maxCountMembersPatches; i++){
+        if(patches[i]->getPatchNr() == patchNr)
+            return patches[i]->getField();
+    }
+    return -1;
 }
 
 /**
