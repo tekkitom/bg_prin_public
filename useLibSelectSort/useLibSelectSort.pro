@@ -20,9 +20,9 @@ FORMS += \
     widgui.ui
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../bg_prin_private2/lib_selectionSort_binSearch/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/release/ -llib_selectionSort_binSearch
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../bg_prin_private2/lib_selectionSort_binSearch/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/debug/ -llib_selectionSort_binSearch
-else:unix: LIBS += -L$$PWD/../../bg_prin_private2/lib_selectionSort_binSearch/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/ -llib_selectionSort_binSearch
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/lib_selectionSort_binSearch/release/ -llib_selectionSort_binSearch
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/lib_selectionSort_binSearch/debug/ -llib_selectionSort_binSearch
+else:unix: LIBS += -L$$PWD/lib_selectionSort_binSearch/ -llib_selectionSort_binSearch
 
-INCLUDEPATH += $$PWD/../../bg_prin_private2/lib_selectionSort_binSearch
-DEPENDPATH += $$PWD/../../bg_prin_private2/lib_selectionSort_binSearch
+INCLUDEPATH += $$PWD/lib_selectionSort_binSearch
+DEPENDPATH += $$PWD/lib_selectionSort_binSearch
