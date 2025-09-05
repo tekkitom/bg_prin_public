@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    lib_selectionSort_binSearch/beachlounger.cpp \
     main.cpp \
     widgui.cpp
 
@@ -18,7 +19,6 @@ HEADERS += \
 
 FORMS += \
     widgui.ui
-
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/lib_selectionSort_binSearch/release/ -llib_selectionSort_binSearch
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/lib_selectionSort_binSearch/debug/ -llib_selectionSort_binSearch

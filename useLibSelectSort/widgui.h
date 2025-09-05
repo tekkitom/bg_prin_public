@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <vector>
 #include <random>
-#include "lib_selectionSort_binSearch/lib_selectionsort_binsearch.h"
+#include "lib_selectionsort_binsearch.h"
 // #include "lib_selectionSort_binSearch/lib_selectionSort_binSearch_global.h"
 #include "beachlounger.h"
 
