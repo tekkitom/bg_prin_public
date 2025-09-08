@@ -100,7 +100,8 @@ void Association::ceatePatches(){
 void Association::newMember(){
     Member *tempMember = nullptr;
 
-    tempMember = new Member(nextMemberNr++);
+    // tempMember = new Member(nextMemberNr++);
+    tempMember = new Member();
     members.push_back(tempMember);
     return;
 }

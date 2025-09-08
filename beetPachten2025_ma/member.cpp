@@ -7,12 +7,12 @@ short Member::nextMemberNr = 1;
  * @brief Konstruktor
  * @param memberNr MitgliedsNr
  */
-Member::Member(short memberNr) {
-    for(unsigned short i = 0; i < maxCountPatchesByMember; i++)
-        myPatches[i] = -1;
+// Member::Member(short memberNr) {
+//     for(unsigned short i = 0; i < maxCountPatchesByMember; i++)
+//         myPatches[i] = -1;
 
-    this->memberNr = memberNr;
-}
+//     this->memberNr = memberNr;
+// }
 
 Member::Member() {
     for(unsigned short i = 0; i < maxCountPatchesByMember; i++)
