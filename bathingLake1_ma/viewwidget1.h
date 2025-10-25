@@ -22,7 +22,12 @@ private:
     Ui::ViewWidget1 *ui;
     ControllerLake *myLake1;
 
+protected:
+
+
 private slots:
-    void createLauncherStandardType();
+    void createLauncherTypeStandard();
+    void showListLaunchers();
+    void clearLog();
 };
 #endif // VIEWWIDGET1_H

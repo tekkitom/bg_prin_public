@@ -13,40 +13,69 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btnCreateOneLouncherStandard">
    <property name="geometry">
     <rect>
      <x>40</x>
      <y>50</y>
      <width>101</width>
-     <height>22</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>create launcher</string>
+    <string>create launcher
+standard</string>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
+  <widget class="QPlainTextEdit" name="edtListLaunchers">
    <property name="geometry">
     <rect>
      <x>160</x>
      <y>40</y>
-     <width>104</width>
+     <width>291</width>
      <height>311</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnShowListLaunchers">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>80</y>
+     <y>180</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>show list
+launchers</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnClearLog">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>330</y>
      <width>80</width>
      <height>22</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>clear log</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCreateOneLouncherLuxurious">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>100</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>create launcher
+luxurious</string>
    </property>
   </widget>
  </widget>

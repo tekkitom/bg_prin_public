@@ -2,6 +2,7 @@
 #define CONTROLLERLAKE_H
 
 #include <vector>
+#include <QStringList>
 #include "launcheratandardtype.h"
 
 using namespace std;
@@ -11,6 +12,7 @@ class ControllerLake
 public:
     ControllerLake();
     void createLauncherStandardType();
+    QStringList getListLaunchers();
 
 private:
 
