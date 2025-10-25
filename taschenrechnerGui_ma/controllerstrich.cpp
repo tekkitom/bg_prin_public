@@ -10,11 +10,24 @@ void ControllerStrich::rechneAdd()
     summe = zahl1 + zahl2;
 }
 
+double ControllerStrich::rechneAdd(double zahl1, double zahl2)
+{
+    double summe = 0.0;
+    summe = zahl1 + zahl2;
+    return summe;
+}
+
+int ControllerStrich::rechneAdd(int zahl1, int zahl2)
+{
+    int summe = 0;
+    summe = zahl1 + zahl2;
+    return summe;
+}
+
 void ControllerStrich::rechneSub()
 {
     differenz = zahl1 - zahl2;
 }
-
 
 double ControllerStrich::getZahl1()
 {

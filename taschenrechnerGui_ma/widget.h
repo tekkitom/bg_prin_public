@@ -2,7 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include "controllerexponential.h"
+#include "controllerpotenzfunc.h"
+#include "controllerint.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,6 +21,9 @@ public:
 
 private slots:
     void rechneAdd();
+    void rechneAdd2();
+    void rechneAdd3();
+    void rechneAdd4();
     void rechneSub();
     void rechneMul();
     void rechneDiv();
@@ -28,8 +32,8 @@ private slots:
 
 private:
     Ui::Widget *ui;
-    ControllerExponential *myControllerExponential;
-
+    ControllerPotenzFunc *myControllerPotenzFunc; /// Double-Werte
+    ControllerInt *myControllerInt; /// Int-Werte
     void sendValuesToController();
 };
 #endif // WIDGET_H

@@ -6,26 +6,36 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    myControllerExponential = new ControllerExponential;
+    myControllerPotenzFunc = new ControllerPotenzFunc;
+    myControllerInt = new ControllerInt (3, 5);
+
     connect(ui->btnAdd,  &QPushButton::clicked, this, &Widget::rechneAdd);
     connect(ui->btnSub,  &QPushButton::clicked, this, &Widget::rechneSub);
     connect(ui->btnMul,  &QPushButton::clicked, this, &Widget::rechneMul);
     connect(ui->btnDiv,  &QPushButton::clicked, this, &Widget::rechneDiv);
     connect(ui->btnPow,  &QPushButton::clicked, this, &Widget::rechnePow);
     connect(ui->btnSqrt, &QPushButton::clicked, this, &Widget::rechneSqrt);
+
+    connect(ui->edtZahl2, &QSpinBox::editingFinished, this, &Widget::rechneAdd2);
+    connect(ui->edtZahl4, &QSpinBox::editingFinished, this, &Widget::rechneAdd3);
+    connect(ui->btnSumme, &QPushButton::clicked, this, &Widget::rechneAdd4);
+
 }
 
 Widget::~Widget()
 {
     delete ui;
-    delete myControllerExponential;
-    myControllerExponential = nullptr;
+    delete myControllerPotenzFunc;
+    myControllerPotenzFunc = nullptr;
 }
 
 void Widget::sendValuesToController()
 {
-    myControllerExponential->setZahl1(ui->edtZahl1->value());
-    myControllerExponential->setZahl2(ui->edtZahl2->value());
+    if(nullptr != myControllerPotenzFunc)
+    {
+        myControllerPotenzFunc->setZahl1(ui->edtZahl1->value());
+        myControllerPotenzFunc->setZahl2(ui->edtZahl2->value());
+    }
 }
 
 void Widget::rechneAdd()
@@ -33,9 +43,84 @@ void Widget::rechneAdd()
     double tempVal = 0.0;
 
     sendValuesToController();
-    myControllerExponential->rechneAdd();
-    tempVal = myControllerExponential->getSumme();
+    myControllerPotenzFunc->rechneAdd();
+    tempVal = myControllerPotenzFunc->getSumme();
     ui->edtLog->appendPlainText(QString::number(tempVal));
+}
+
+void Widget::rechneAdd2()
+{
+    double tempVal = 0.0;
+    double tempZahl1 = 0.0;
+    double tempZahl2 = 0.0;
+    QString outString;
+    outString = "lokale Variable: ";
+
+    if(nullptr != myControllerPotenzFunc)
+    {
+        tempZahl1 = ui->edtZahl1->value();
+        tempZahl2 = ui->edtZahl2->value();
+
+        tempVal = myControllerPotenzFunc->rechneAdd(tempZahl1, tempZahl2);
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+
+        outString = "Attribut: ";
+        tempVal = myControllerPotenzFunc->getSumme();
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+    }
+}
+
+void Widget::rechneAdd3()
+{
+    int tempVal = 0;
+    int tempZahl1 = 0;
+    int tempZahl2 = 0;
+    QString outString;
+    outString = "lokale Variable: ";
+
+    if(nullptr != myControllerPotenzFunc)
+    {
+        tempZahl1 = ui->edtZahl3->value();
+        tempZahl2 = ui->edtZahl4->value();
+
+        tempVal = myControllerInt->rechneAdd(tempZahl1, tempZahl2);
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+
+        outString = "Attribut (int): ";
+        tempVal = myControllerInt->getSumme();
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+
+        outString = "Attribut (double): ";
+        tempVal = myControllerPotenzFunc->getSumme();
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+    }
+}
+
+void Widget::rechneAdd4()
+{
+    int tempVal = 0;
+    QString outString;
+    outString = "lokale Variable: ";
+
+    if(nullptr != myControllerPotenzFunc)
+    {
+        myControllerInt->rechneSumme();
+
+        outString = "Attribut (int): ";
+        tempVal = myControllerInt->getSumme();
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+
+        outString = "Attribut (double): ";
+        tempVal = myControllerPotenzFunc->getSumme();
+        outString += QString::number(tempVal);
+        ui->edtLog->appendPlainText(outString);
+    }
 }
 
 void Widget::rechneSub()
@@ -43,8 +128,8 @@ void Widget::rechneSub()
     double tempVal = 0.0;
 
     sendValuesToController();
-    myControllerExponential->rechneSub();
-    tempVal = myControllerExponential->getDdifferenz();
+    myControllerPotenzFunc->rechneSub();
+    tempVal = myControllerPotenzFunc->getDdifferenz();
     ui->edtLog->appendPlainText(QString::number(tempVal));
 }
 
@@ -53,8 +138,8 @@ void Widget::rechneMul()
     double tempVal = 0.0;
 
     sendValuesToController();
-    myControllerExponential->rechneMul();
-    tempVal = myControllerExponential->getProdukt();
+    myControllerPotenzFunc->rechneMul();
+    tempVal = myControllerPotenzFunc->getProdukt();
     ui->edtLog->appendPlainText(QString::number(tempVal));
 }
 
@@ -63,8 +148,8 @@ void Widget::rechneDiv()
     double tempVal = 0.0;
 
     sendValuesToController();
-    myControllerExponential->rechneDiv();
-    tempVal = myControllerExponential->getQuotient();
+    myControllerPotenzFunc->rechneDiv();
+    tempVal = myControllerPotenzFunc->getQuotient();
     ui->edtLog->appendPlainText(QString::number(tempVal));
 }
 
@@ -73,8 +158,8 @@ void Widget::rechnePow()
     double tempVal = 0.0;
 
     sendValuesToController();
-    myControllerExponential->rechnePotenzfunktion();
-    tempVal = myControllerExponential->getErgebnisPotenzfunktion();
+    myControllerPotenzFunc->rechnePotenzfunktion();
+    tempVal = myControllerPotenzFunc->getErgebnisPotenzfunktion();
     ui->edtLog->appendPlainText(QString::number(tempVal));
 }
 
@@ -83,7 +168,7 @@ void Widget::rechneSqrt()
     double tempVal = 0.0;
 
     sendValuesToController();
-    myControllerExponential->rechneWurzel();
-    tempVal = myControllerExponential->getErgebnisWurzel();
+    myControllerPotenzFunc->rechneWurzel();
+    tempVal = myControllerPotenzFunc->getErgebnisWurzel();
     ui->edtLog->appendPlainText(QString::number(tempVal));
 }

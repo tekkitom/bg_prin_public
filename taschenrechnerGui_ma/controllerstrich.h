@@ -6,6 +6,8 @@ class ControllerStrich
 public:
     ControllerStrich();
     void rechneAdd();
+    double rechneAdd(double zahl1, double zahl2);
+    int rechneAdd(int zahl1, int zahl2);
     void rechneSub();
 
     double getZahl1();

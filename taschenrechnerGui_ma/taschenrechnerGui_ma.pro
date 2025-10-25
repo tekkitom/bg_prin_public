@@ -9,14 +9,16 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    controllerexponential.cpp \
+    controllerint.cpp \
+    controllerpotenzfunc.cpp \
     controllerpunkt.cpp \
     controllerstrich.cpp \
     main.cpp \
     widget.cpp
 
 HEADERS += \
-    controllerexponential.h \
+    controllerint.h \
+    controllerpotenzfunc.h \
     controllerpunkt.h \
     controllerstrich.h \
     widget.h

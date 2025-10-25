@@ -1,13 +1,13 @@
-#ifndef CONTROLLEREXPONENTIAL_H
-#define CONTROLLEREXPONENTIAL_H
+#ifndef CONTROLLERPOTENZFUNC_H
+#define CONTROLLERPOTENZFUNC_H
 
 #include <cmath>
 #include "controllerpunkt.h"
 
-class ControllerExponential : public ControllerPunkt
+class ControllerPotenzFunc : public ControllerPunkt
 {
 public:
-    ControllerExponential();
+    ControllerPotenzFunc();
     void rechnePotenzfunktion();
     void rechneWurzel();
 
@@ -19,4 +19,4 @@ private:
     double ergebnisPotenzfunktion;
 };
 
-#endif // CONTROLLEREXPONENTIAL_H
+#endif // CONTROLLERPOTENZFUNC_H
