@@ -23,9 +23,9 @@
 }
 
 
-\title{Arbeitsunterlagen zu FOS Elektrotechnik, Technische Informatik, Mechatronik Themenfeld 12.1}
-\subtitle{Gleichstromnetzanalyse}
-\date{V 0.1.2 - im Aufbau\\ Stand: \today}%\\
+\title{Arbeitsunterlagen zu Prin im BG Praktische Informatik}
+
+\date{V 0.1.0 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -69,17 +69,26 @@
 
 \section{Verkettete Liste}
 
-Das Abspeichern von Daten in einem Array ist möglich, aber mit eineigen Einschränkungen verbunden. Das Array muss beim Design des Programms festgelegt werden. Eine Größenänderung ist nachträglich nicht möglich\footnote{Bei einem dynasch angelegten Array (als Pointer, mit new) ist die Auswahl der Größe zur Laufzeit möglich.)}
+Das Abspeichern von Daten in einem Array ist möglich, aber mit einigen Einschränkungen verbunden. Das Array muss beim Design des Programms festgelegt werden. Eine Größenänderung ist nachträglich nicht möglich\footnote{Bei einem dynasch angelegten Array (als Pointer, mit new) ist die Auswahl der Größe zur Laufzeit möglich.)}
 
-Eine verkettete Liste bietet die Möglichkeit beleibig viele Einträge zu verwalten. Alle Einträge werden als Pointer auf dem Heap abgelegt. Die physikalische Reihenfolge ist für die logische Reihenfolge unerheblich. 
+Eine verkettete Liste bietet die Möglichkeit beliebig viele Einträge zu verwalten. Alle Einträge werden als Pointer auf dem Heap abgelegt. Die physikalische Reihenfolge ist für die logische Reihenfolge unerheblich. 
 
 In der Liste sind die Daten abgespeichert. Zusätzlich verweißt ein Eintrag der Liste auf den nächsten Eintrag. Der letzte Eintrag hat als Nachfolger (nächster Eintrag) nullptr eingetragen.
 
-Um die Liste zu verwalten benötige ich (mindestens) zwei Klassen. Eine Klasse (im Beisiel ModelData) verwaltet die Liste. Sie ist auch die Schnittstelle im Programm zu den anderen Klassen (wenn vorhanden). Entry soll die Klasse sein, die die Daten beinhaltet. Diese Klasse erhält zusätzlich zu den Attributen der Daten 
-
+Um die Liste zu verwalten benötige ich (mindestens) zwei Klassen. Eine Klasse (im Beisiel ModelData) verwaltet die Liste. Sie ist auch die Schnittstelle im Programm zu den anderen Klassen (wenn vorhanden). Entry soll die Klasse sein, die die Daten beinhaltet. Diese Klasse erhält zusätzlich zu den Attributen der Daten (siehe Bild \ref{fig:cdVerketteteListe}. Bild \ref{fig:odLeereListe} zeigt das Programm zur Laufzeit in Form eines sogenannten Objektdiagramms. Jedes Rechteck stellt ein Objekt dar. 
+ 
 \begin{frame}
 \begin{figure}
 \input{verketteteListe/cd_verketteteListe1.tex}
+\lab3l{fig:cdVerketteteListe}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Objektdiagramm, leere Liste}
+  \begin{figure}
+\input{verketteteListe/od_verketteteListeEinfachBild1_leereListe.dia}
+\label{fig:odLeereListe}
 \end{figure}
 \end{frame}
 
