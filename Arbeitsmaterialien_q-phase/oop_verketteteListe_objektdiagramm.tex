@@ -69,21 +69,69 @@
 
 \section{Verkettete Liste}
 
-Das Abspeichern von Daten in einem Array ist möglich, aber mit einigen Einschränkungen verbunden. Das Array muss beim Design des Programms festgelegt werden. Eine Größenänderung ist nachträglich nicht möglich\footnote{Bei einem dynasch angelegten Array (als Pointer, mit new) ist die Auswahl der Größe zur Laufzeit möglich.)}
+Das Abspeichern von Daten in einem Array ist möglich, aber mit einigen Einschränkungen verbunden. Das Array muss beim Design des Programms festgelegt werden. Eine Größenänderung ist nachträglich nicht möglich\footnote{Bei einem dynamisch angelegten Array (als Pointer, mit new) ist die Auswahl der Größe zur Laufzeit möglich.)}
 
 Eine verkettete Liste bietet die Möglichkeit beliebig viele Einträge zu verwalten. Alle Einträge werden als Pointer auf dem Heap abgelegt. Die physikalische Reihenfolge ist für die logische Reihenfolge unerheblich.
 
-In der Liste sind die Daten abgespeichert. Zusätzlich verweißt ein Eintrag der Liste auf den nächsten Eintrag. Der letzte Eintrag hat als Nachfolger (nächster Eintrag) nullptr eingetragen.
+In der Liste sind die Daten abgespeichert. Zusätzlich verweist ein Eintrag der Liste auf den nächsten Eintrag. Der letzte Eintrag hat als Nachfolger (nächster Eintrag) \lstinline|nullptr| eingetragen.
 
 Um die Liste zu verwalten benötige ich (mindestens) zwei Klassen. Eine Klasse (im Beisiel ModelData) verwaltet die Liste. Sie ist auch die Schnittstelle im Programm zu den anderen Klassen (wenn vorhanden). Entry soll die Klasse sein, die die Daten beinhaltet. Diese Klasse erhält zusätzlich zu den Attributen der Daten (siehe Bild \ref{fig:cdVerketteteListe}. Bild \ref{fig:odLeereListe} zeigt das Programm zur Laufzeit in Form eines sogenannten Objektdiagramms. Jedes Rechteck stellt ein Objekt dar.
 
-\begin{frame}
-\begin{figure}
-\input{verketteteListe/cd_verketteteListe1.tex}
-\label{fig:cdVerketteteListe}
+\begin{figure}[htb]
+  \input{verketteteListe/cd_verketteteListe1.tex}
+  \caption{Klassendiagramm zu Programm, das die verkettete Liste verwaltet}
+  \label{fig:cdVerketteteListe}
 \end{figure}
-\end{frame}
 
+Bild \ref{fig:odLeereListe} zeigt das Programm zur Laufzeit in Form eines sogenannten Objektdiagramms. Hier mit einer leeren Liste - ohne Objekte zur Ablage von Daten in der Liste. Jedes Rechteck stellt ein Objekt dar. Der Name des Objekts steht in der ersten Zeile vor dem \glq : \grq \ dahinter folgt der Name der Klasse. Im Diagramm sind Objekte der Liste als Zahlen (1, 2, 3, \dots) eingetragen. Unterhalb des Namens des Objekts stehen die Attribute mit dem aktuellen Wert. Das Objektdiagramm zeigt einen Zustand der Attribute und Objekte zu einem bestimmten Zeitpunkt.
+
+\begin{figure}[htb]
+  \input{verketteteListe/od_verketteteListeEinfachBild1_leereListe.tex}
+  \caption{Objektdiagramm, leere Liste}
+  \label{fig:odLeereListe}
+\end{figure}
+
+In Bild \ref{fig:odListeMit3Eintraegen} sind in der Liste drei Einträge vorhanden. Das Attribut \lstinline|startF| stellt den Beginn der Liste dar. Die Adressen hier sind fiktiv. \lstinline|startR| ist ein Zeiger auf das Ende der Liste. Dieser ist befüllt und wird nur bei einer doppelt verketteten Liste benötigt. Das Attribut \lstinline|next| in den Objekten von \lstinline|Entry| beinhaltet die Adresse, unter der das nachfolgende Element der Liste auf dem Heap gespeichert ist. Wenn kein Element folgt (hier bei Objekt 3) wird für \lstinline|next| der Wert \lstinline|nullptr| (0x00\footnote{0x bedeutet, dass die Zahl hexadezimal dargestellt wird}) gespeichert.
+
+\begin{figure}[htb]
+  \input{verketteteListe/od_verketteteListeEinfachBild3_dreiEintraege.tex}
+  \caption{Objektdiagramm, drei Einträge in verkettete Liste}
+  \label{fig:odListeMit3Eintraegen}
+\end{figure}
+
+\section{Einfügen in die verkettete Liste}
+In den folgenden Abschnitten betrachte ich das Einfügen in eine Liste, die in einer Richtung verkettet ist. Diese Form wird einfach verkettete Liste genannt. Einfach bezieht sich dabei auf die mögliche Richtung der Navigation.
+
+In späteren Abschnitten befasse ich mich dann mit einer sogenannten doppelt verketteten Liste. Diese Form kann in zwei Richtungen (von vorne nach hinten und von hinten nach vorne durchlaufen werden).
+
+\subsection{Einfügen vorne}
+Wenn neue Einträge hinzugefügt werden sollen, müsste man bei einem Array alle Einträge, die nach der entsprechenden Position folgen, um eine Stelle nach rechts verschieben. Dies würde durch Kopieren der Daten erfolgen (vom Ende rückwärts bis zur betroffenen Stelle). Anschließend kann in dem freien Feld das Datum eingetragen werden.
+
+Bei einer Liste wird ein neues Objekt mit \lstinline|new Entry| angelegt (Bild \ref{fig:odListeMit3EintraegenNeuVorne_1}).
+
+\begin{figure}[htb]
+  \input{verketteteListe/od_verketteteListeEinfachBild4_dreiEintraege_einerHinzuVorne.tex}
+  \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
+  \label{fig:odListeMit3EintraegenNeuVorne_1}
+\end{figure}
+
+Anschließend werden (Reihenfolge der Arbeitsschritte beachten!) die Zeiger aktualisiert (Bilder \ref{fig:odListeMit3EintraegenNeuVorne_2} und \ref{fig:odListeMit3EintraegenNeuVorne_3}). In Bild \ref{fig:odListeMit3EintraegenNeuVorne_2} ist der Nachfolger von Objekt 4 auf Objekt 1 verlinkt. Somit kann ich das Objekt 1 über \lstinline|startF| und zusätzlich über den temporären Zeiger \lstinline|tempEntry| erreichen.
+
+\begin{figure}[htb]
+  \input{verketteteListe/od_verketteteListeEinfachBild4a_dreiEintraege_einerHinzuVorne.tex}
+  \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
+  \label{fig:odListeMit3EintraegenNeuVorne_2}
+\end{figure}
+
+In Bild \ref{fig:odListeMit3EintraegenNeuVorne_3} ist dann der Zeiger \lstinline|startF| angepasst, der \lstinline|tempEntry| ist wieder auf 0x00 gesetzt. Damit ist das Einfügen am Anfang der Liste abgeschlossen.
+
+\begin{figure}[htb]
+  \input{verketteteListe/od_verketteteListeEinfachBild4b_dreiEintraege_einerHinzuVorne.tex}
+  \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
+  \label{fig:odListeMit3EintraegenNeuVorne_3}
+\end{figure}
+
+\only<presentation>{
 \begin{frame}
   \frametitle{Objektdiagramm, leere Liste}
   \begin{figure}
@@ -91,6 +139,19 @@ Um die Liste zu verwalten benötige ich (mindestens) zwei Klassen. Eine Klasse (
 \label{fig:odLeereListe}
 \end{figure}
 \end{frame}
+}
+
+\only<presentation>{
+begin{frame}
+%   \frametitle{Objektdiagramm, leere Liste}
+  \begin{figure}
+    \input{verketteteListe/od_verketteteListeEinfachBild1_leereListe.tex}
+    \caption{Objektdiagramm, leere Liste}
+    \label{fig:odLeereListe}
+  \end{figure}
+\end{frame}
+}
+
 
 \only<presentation>{
 \begin{frame}{}
