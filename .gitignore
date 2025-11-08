@@ -54,6 +54,7 @@ compile_commands.json
 *creator.user*
 
 *_qmlcache.qrc
+*.synctex.gz
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
