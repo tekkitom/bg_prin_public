@@ -13,12 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    modeldata.cpp \
         widget.cpp \
-    verwaltung.cpp \
     element.cpp
 
 HEADERS  += widget.h \
-    verwaltung.h \
-    element.h
+    element.h \
+    modeldata.h
 
 FORMS    += widget.ui

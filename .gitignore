@@ -372,3 +372,4 @@ TSWLatexianTemp*
 /.kile/
 
 *.dia~
+*.kilepr.gui

@@ -9,7 +9,7 @@
 \usepackage{ulem}
 \usepackage{listings}
 %
-\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, alsolanguage=XML}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, captionpos=b, alsolanguage=XML, basicstyle=\ttfamily}
 % \MyLogo{\includegraphics[height=1cm]{../../../../bilder/bwslogo_3.png}}
 % % \includegraphics{../../bilder/bwslogo_3.png}
 % % bwslogo_3.png: 476x392 px, 300dpi, 4.03x3.32 cm, bb=
@@ -33,51 +33,51 @@
 \titlegraphic{Für eigene Teile gilt: \includegraphics[height=1cm]{cc_by-nc_eu.png}}
 
 \begin{document}
-  \only<article>{
-    \maketitle
-    \tableofcontents
-    \clearpage
-  }
-  % \begin{frame}<beamer>
-  %   \titlepage
-  %   % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
-  % \end{frame}
-  % \AtBeginSection[] % Do nothing for \section*
-  % {
-  %   \begin{frame}<beamer>
-  %     \frametitle{Inhalt}
-  %     \tableofcontents[currentsection]
-  %   \end{frame}
-  % }
+\only<article>{
+  \maketitle
+  \tableofcontents
+  \clearpage
+}
+% \begin{frame}<beamer>
+%   \titlepage
+%   % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
+% \end{frame}
+% \AtBeginSection[] % Do nothing for \section*
+% {
+%   \begin{frame}<beamer>
+%     \frametitle{Inhalt}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
 
 
-  \part[OOP]{OOP - Objektorientierte Programmierung}
-  \begin{frame}
-    \partpage
-    %   \tableofcontents[hidesubsections]
-  \end{frame}
-  \begin{frame}<beamer>
-    \frametitle{Inhalt}
-    \begin{columns}
-      \column{.5\textwidth}
-      \tableofcontents[sections={1-3},hidesubsections]%currentsection]
-      \column{.5\textwidth}
-      \tableofcontents[sections={4-},hidesubsections]%currentsection]
-    \end{columns}
-  \end{frame}
+\part[OOP]{OOP - Objektorientierte Programmierung}
+\begin{frame}
+  \partpage
+  %   \tableofcontents[hidesubsections]
+\end{frame}
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \begin{columns}
+    \column{.5\textwidth}
+    \tableofcontents[sections={1-3},hidesubsections]%currentsection]
+    \column{.5\textwidth}
+    \tableofcontents[sections={4-},hidesubsections]%currentsection]
+  \end{columns}
+\end{frame}
 
 
 \section{Verkettete Liste}
 
-Das Abspeichern von Daten in einem Array ist möglich, aber mit einigen Einschränkungen verbunden. Das Array muss beim Design des Programms festgelegt werden. Eine Größenänderung ist nachträglich nicht möglich\footnote{Bei einem dynastisch angelegten Array (als Pointer, mit new) ist die Auswahl der Größe zur Laufzeit möglich.)}
+Das Abspeichern von Daten in einem Array ist möglich, aber mit einigen Einschränkungen verbunden. Das Array muss beim Design des Programms festgelegt werden. Eine Größenänderung ist nachträglich nicht möglich\footnote{Bei einem dynastisch angelegten Array (als Pointer, mit \lstinline|new|) ist die Auswahl der Größe zur Laufzeit möglich.)}
 
 Eine verkettete Liste bietet die Möglichkeit beliebig viele Einträge zu verwalten. Alle Einträge werden als Pointer auf dem Heap abgelegt. Die physikalische Reihenfolge ist für die logische Reihenfolge unerheblich.
 
 In der Liste sind die Daten abgespeichert. Zusätzlich verweist ein Eintrag der Liste auf den nächsten Eintrag. Der letzte Eintrag hat als Nachfolger (nächster Eintrag) \lstinline|nullptr| eingetragen.
 
-Um die Liste zu verwalten, benötige ich (mindestens) zwei Klassen. Eine Klasse (im Beispiel ModelData) verwaltet die Liste. Sie ist auch die Schnittstelle im Programm zu den anderen Klassen (wenn vorhanden). \lstinline|Entry| soll die Klasse sein, die die Daten beinhaltet. Diese Klasse erhält zusätzlich zu den Attributen der Daten (siehe Bild \ref{fig:cdVerketteteListe}).
+Um die Liste zu verwalten, benötige ich (mindestens) zwei Klassen. Eine Klasse (im Beispiel \lstinline|ModelData|) verwaltet die Liste. Sie ist auch die Schnittstelle im Programm zu den anderen Klassen (wenn vorhanden). \lstinline|Entry| soll die Klasse sein, die die Daten beinhaltet. Diese Klasse erhält zusätzlich zu den Attributen der Daten (siehe Bild \ref{fig:cdVerketteteListe}).
 
-\begin{figure}[htb]
+\begin{figure}[hp]
   \input{verketteteListe/cd_verketteteListe1.tex}
   \caption{Klassendiagramm zu Programm, das die verkettete Liste verwaltet}
   \label{fig:cdVerketteteListe}
@@ -85,7 +85,7 @@ Um die Liste zu verwalten, benötige ich (mindestens) zwei Klassen. Eine Klasse 
 
 Bild \ref{fig:odLeereListe} zeigt das Programm zur Laufzeit in Form eines sogenannten Objektdiagramms. Hier mit einer leeren Liste - ohne Objekte zur Ablage von Daten in der Liste. Jedes Rechteck stellt ein Objekt dar. Der Name des Objekts steht in der ersten Zeile vor dem \glq : \grq \ dahinter folgt der Name der Klasse. Im Diagramm sind Objekte der Liste als Zahlen (1, 2, 3, \dots) eingetragen. Unterhalb des Namens des Objekts stehen die Attribute mit dem aktuellen Wert. Das Objektdiagramm zeigt einen Zustand der Attribute und Objekte zu einem bestimmten Zeitpunkt.
 
-\begin{figure}[htb]
+\begin{figure}[hp]
   \input{verketteteListe/od_verketteteListeEinfachBild1_leereListe.tex}
   \caption{Objektdiagramm, leere Liste}
   \label{fig:odLeereListe}
@@ -93,7 +93,7 @@ Bild \ref{fig:odLeereListe} zeigt das Programm zur Laufzeit in Form eines sogena
 
 In Bild \ref{fig:odListeMit3Eintraegen} sind in der Liste drei Einträge vorhanden. Das Attribut \lstinline|startF| stellt den Beginn der Liste dar. Die Adressen hier sind fiktiv. \lstinline|startR| ist ein Zeiger auf das Ende der Liste. Dieser ist befüllt und wird nur bei einer doppelt verketteten Liste benötigt. Das Attribut \lstinline|next| in den Objekten von \lstinline|Entry| beinhaltet die Adresse, unter der das nachfolgende Element der Liste auf dem Heap gespeichert ist. Wenn kein Element folgt (hier bei Objekt 3) wird für \lstinline|next| der Wert \lstinline|nullptr| (0x00\footnote{0x bedeutet, dass die Zahl hexadezimal dargestellt wird}) gespeichert.
 
-\begin{figure}[htb]
+\begin{figure}[hp]
   \input{verketteteListe/od_verketteteListeEinfachBild3_dreiEintraege.tex}
   \caption{Objektdiagramm, drei Einträge in verkettete Liste}
   \label{fig:odListeMit3Eintraegen}
@@ -107,61 +107,166 @@ In späteren Abschnitten befasse ich mich dann mit einer sogenannten doppelt ver
 \subsection{Einfügen vorne}
 Wenn neue Einträge hinzugefügt werden sollen, müsste man bei einem Array alle Einträge, die nach der entsprechenden Position folgen, um eine Stelle nach rechts verschieben. Dies würde durch Kopieren der Daten erfolgen (vom Ende rückwärts bis zur betroffenen Stelle). Anschließend kann in dem freien Feld das Datum eingetragen werden.
 
-Bei einer Liste wird ein neues Objekt mit \lstinline|new Entry| angelegt (Bild \ref{fig:odListeMit3EintraegenNeuVorne_1}).
+Bei einer Liste wird ein neues Objekt mit \lstinline|new Entry| angelegt (Bild \ref{fig:odListeMit3EintraegenNeuVorne_1}, Listing \ref{lst:EinfuegenVorne1}).
 
-\begin{figure}[htb]
-  \input{verketteteListe/od_verketteteListeEinfachBild4_dreiEintraege_einerHinzuVorne.tex}
-  \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
-  \label{fig:odListeMit3EintraegenNeuVorne_1}
-\end{figure}
+\begin{lstlisting}[label=lst:EinfuegenVorne1, caption=Einfügen am Anfang (Teil 1)]
+  void ModelData::insertNewEntryFront(QString nameIn, QString telIn)
+  {
+    Entry * newEntry = new Entry;
 
-Anschließend werden (Reihenfolge der Arbeitsschritte beachten!) die Zeiger aktualisiert (Bilder \ref{fig:odListeMit3EintraegenNeuVorne_2} und \ref{fig:odListeMit3EintraegenNeuVorne_3}). In Bild \ref{fig:odListeMit3EintraegenNeuVorne_2} ist der Nachfolger von Objekt 4 auf Objekt 1 verlinkt. Somit kann ich das Objekt 1 über \lstinline|startF| und zusätzlich über den temporären Zeiger \lstinline|tempEntry| erreichen.
+    newEntry->setName(nameIn);
+    newEntry->setTelNr(telIn);
+  \end{lstlisting}
 
-\begin{figure}[htb]
+
+
+  \begin{figure}[hp]
+    \input{verketteteListe/od_verketteteListeEinfachBild4_dreiEintraege_einerHinzuVorne.tex}
+    \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
+    \label{fig:odListeMit3EintraegenNeuVorne_1}
+  \end{figure}
+
+  Anschließend werden (Reihenfolge der Arbeitsschritte beachten!) die Zeiger aktualisiert (Bilder \ref{fig:odListeMit3EintraegenNeuVorne_2} und \ref{fig:odListeMit3EintraegenNeuVorne_3}). In Bild \ref{fig:odListeMit3EintraegenNeuVorne_2} ist der Nachfolger von Objekt 4 auf Objekt 1 verlinkt. Somit kann ich das Objekt 1 über \lstinline|startF| und zusätzlich über den temporären Zeiger \lstinline|newEntry| erreichen.
+
+  Im Listing \ref{lst:EinfuegenVorne2} prüfe ich in Zeile 1, ob es eine Liste gibt. Falls nicht, wird nur der Zeiger \lstinline|startF| verändert (Zeile 3). Der else-Zweig ist in der ausführlichen Fassung bei einer einfach verketteten List nicht nötig. Ich habe den Code aus einem Programmbeispiel entnommen, das doppelt verkettet ist (vorwärts und rückwärts).
+
+  \begin{lstlisting}[label=lst:EinfuegenVorne2, caption=Einfügen am Anfang (Teil 2)]
+    if(nullptr == fListStart)
+    {
+      fListStart = newEntry;
+    }
+    else
+    {
+      if(nullptr != fListStart)
+      {
+        newEntry->setNext(fListStart);
+        fListStart = newEntry;
+        newEntry = nullptr;
+      }
+    }
+  }
+\end{lstlisting}
+
+
+\begin{figure}[hp]
   \input{verketteteListe/od_verketteteListeEinfachBild4a_dreiEintraege_einerHinzuVorne.tex}
   \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
   \label{fig:odListeMit3EintraegenNeuVorne_2}
 \end{figure}
 
-In Bild \ref{fig:odListeMit3EintraegenNeuVorne_3} ist dann der Zeiger \lstinline|startF| angepasst, der \lstinline|tempEntry| ist wieder auf 0x00 gesetzt. Damit ist das Einfügen am Anfang der Liste abgeschlossen.
+In Bild \ref{fig:odListeMit3EintraegenNeuVorne_3} ist dann der Zeiger \lstinline|startF| angepasst, der \lstinline|newEntry| ist wieder auf 0x00 gesetzt. Damit ist das Einfügen am Anfang der Liste abgeschlossen.
 
-\begin{figure}[htb]
+\begin{figure}[hp]
   \input{verketteteListe/od_verketteteListeEinfachBild4b_dreiEintraege_einerHinzuVorne.tex}
   \caption{Objektdiagramm, ein Objekt vorne Einfügen, neues Objekt}
   \label{fig:odListeMit3EintraegenNeuVorne_3}
 \end{figure}
 
-\only<presentation>{
-\begin{frame}
-%   \frametitle{Klassendiagramm zu Programm, das die verkettete Liste verwaltet}
-  \begin{figure}
-    \input{verketteteListe/cd_verketteteListe1.tex}
-    \caption{Klassendiagramm zu Programm, das die verkettete Liste verwaltet}
-    \label{fig:cdVerketteteListe}
-  \end{figure}
-\end{frame}
-}
+\subsection{Einfügen in der Mitte}
+Einen Eintrag vorne in der verketteten Liste einzufügen hat den Vorteil, dass man nur beim neuen Element den Nachfolger eintragen muss und \lstinline|startF| korrigiert. Es kann jedoch sein, dass man einen Eintrag in der Mitte der Liste oder am Ende einfügen soll.
 
-\only<presentation>{
-begin{frame}
-%   \frametitle{Objektdiagramm, leere Liste}
-  \begin{figure}
-    \input{verketteteListe/od_verketteteListeEinfachBild1_leereListe.tex}
-    \caption{Objektdiagramm, leere Liste}
-    \label{fig:odLeereListe}
-  \end{figure}
-\end{frame}
-}
+Hier muss ich zuerst die Position suchen. Bei einer einfach verketteten Liste benötige ich ggf. einen zweiten Hilfszeiger (Vorgänger), um "`zurückgehen zu können"'.
+
+Im ersten Schritt erstelle ich wieder ein Objekt von \lstinline|Entry| (siehe Bild \ref{fig:odListeMit3EintraegenNeuVorne_1}) Das Objekt wird über \lstinline|newEntry| referenziert.
+
+Danach, in Schritt zwei muss ich die Position finden, an der das neue Element eingefügt werden soll. Hierfür verwende ich den Hilfszeiger \lstinline|tempEntry|. Bei der Suche muss ich regelmäßig prüfen, ob das Objekt, auf das \lstinline|tempEntry| verweist, vorhanden ist (nicht \lstinline|nulltr|) und ob der Nachfolger ebenfalls nicht \lstinline|nullptr| ist (Bilder \ref{fig:odListeMit3EintraegenNeuMitte_1} bis \ref{fig:odListeMit3EintraegenNeuMitte_3}). In meinem Beispiel soll ein Eintrag mit dem Buchstaben f zwischen e und g eingefügt werden. Im Bild \ref{fig:odListeMit3EintraegenNeuMitte_3} zeigt der Hilfszeiger auf den Eintrag 3, Buchstabe g. Mein Ziel ist erreicht, ich habe die Position gefunden, vor der ich einfügen soll. In diesem Fall wäre es auch möglich die Position 2 (Bild \ref{fig:odListeMit3EintraegenNeuMitte_2}) zu suchen, um dahinter einzufügen. Es kann jedoch sein, dass ich nicht sicher sagen kann, ob direkt nach dem betreffenden Eintrag (hier Objekt 2) die Stelle ist, an der das neue Objekt eingefügt werden soll.
+
+Ich weiß jetzt, dass das neue Objekt \emph{vor} dem Objekt an der Adresse \lstinline|0x430| eingefügt werden soll. Die Adresse des zusätzlichen Objekts (hier \lstinline|0x440|) ist auch bekannt. Jedoch fehlt mir in diesem Moment die Adresse des Vorgängers zu Objekt 3. Ich könnte jetzt erneut von \lstinline|startF| suchen, bis ich das Objekt finde, bei dem als \lstinline|next| der Wert \lstinline|0x430| eingetragen ist. Das würde die Suche erheblich verzögern\footnote{Bei 10\,000 Einträgen und erheblich mehr wäre der zeitliche Ablauf sicher nicht mehr nahe 0\,mS}. Daher speichere ich zusätzlich zu \lstinline|tempEntry1| auch \lstinline|tempEntry2| ab (Bild \ref{fig:odListeMit3EintraegenNeuMitte_4}).
+
+\begin{lstlisting}[label=lst:EinfuegenMitte, caption=Einfügen in der Mitte]
+  void ModelData::insertNewEntryBeforeCurrent(QString nameVor,
+  String nameIn, QString telIn)
+  {
+    Entry * tempEntry1 = fListStart;
+    Entry * tempEntry2 = fListStart;
+    Entry * newEntry = new Entry;
+
+    newEntry->setName(nameIn);
+    newEntry->setTelNr(telIn);
+
+    while((nullptr != tempEntry1->getNext()) &&
+    (0 != tempEntry1->getName().compare(nameVor)))
+    {
+      tempEntry2 = tempEntry1;
+      tempEntry1 = tempEntry1->getNext();
+    }
+
+    if(nullptr != tempEntry1)
+    {
+      newEntry->setNext(tempEntry1);
+      tempEntry2->setNext(newEntry);
+    }
+  }
+\end{lstlisting}
 
 
-\only<presentation>{
-\begin{frame}{}
-  \begin{description}
-    \item[]
-    \item[]
-    \item[]
-    \item[]
-  \end{description}
-\end{frame}
-}
+\begin{figure}[hp]
+  \input{verketteteListe/od_verketteteListeEinfachBild6a_dreiEintraege_einerHinzuMitte.tex}
+  \caption{Objektdiagramm, ein Objekt mittig Einfügen, suche nach der Position zum Einfügen}
+  \label{fig:odListeMit3EintraegenNeuMitte_1}
+\end{figure}
+
+\begin{figure}[hp]
+  \input{verketteteListe/od_verketteteListeEinfachBild6b_dreiEintraege_einerHinzuMitte.tex}
+  \caption{Objektdiagramm, ein Objekt mittig Einfügen, suche nach der Position zum Einfügen}
+  \label{fig:odListeMit3EintraegenNeuMitte_2}
+\end{figure}
+
+\begin{figure}[hp]
+  \input{verketteteListe/od_verketteteListeEinfachBild6c_dreiEintraege_einerHinzuMitte.tex}
+  \caption{Objektdiagramm, ein Objekt mittig Einfügen, suche nach der Position zum Einfügen}
+  \label{fig:odListeMit3EintraegenNeuMitte_3}
+\end{figure}
+
+\begin{figure}[hp]
+  \input{verketteteListe/od_verketteteListeEinfachBild6d_dreiEintraege_einerHinzuMitte.tex}
+  \caption{Objektdiagramm, ein Objekt mittig Einfügen, suche nach der Position zum Einfügen mit zweitem Hilfszeiger auf Vorgänger}
+  \label{fig:odListeMit3EintraegenNeuMitte_4}
+\end{figure}
+
+\clearpage
+\subsection{Löschen eines Eintrags}
+
+Beim Löschen eines Eintrags muss ich wieder die Adresse des Vorgänger-Elements kennen. Hier verwende ich wieder zwei Hilfszeiger. Das gesuchte Element wird in diesem Fall nicht mit new angelegt, sondern mit dem Hilfszeiger \lstinline|tempEntry1| markiert. \lstinline|tempEntry2| bekommt die Adresse des Vorgängers. Beim Austragen aus der Liste wird der Nachfolger von \lstinline|tempEntry2| auf den Nachfolger von \lstinline|tempEntry1| gesetzt. Anschließend kann das Objekt, das an \lstinline|tempEntry1| hängt, mit \lstinline|delete| entsorgt werden.
+
+\begin{lstlisting}[label=lst:Loeschen, caption=Löschen eines Objekts aus der Liste]
+  bool ModelData::removeEntry(QString nameIn)
+  {
+    Entry * tempEntry1 = fListStart;
+    Entry * tempEntry2 = fListStart; //Vorgaenger
+
+    while((nullptr != tempEntry1) &&
+    (0 != tempEntry1->getName().compare(nameIn)))
+    {
+      tempEntry2 = tempEntry1;
+      tempEntry1 = tempEntry1->getNext();
+    }
+
+    if(nullptr != tempEntry1)
+    {
+      if(fListStart == tempEntry1)
+      {
+        fListStart = tempEntry1->getNext();
+        if(nullptr != fListStart)
+        fListStart->setPrevious(nullptr);
+        if(rListStart == tempEntry1)
+        rListStart = nullptr;
+      }
+      else
+      {
+        tempEntry2->setNext(tempEntry1->getNext());
+        if(nullptr != tempEntry2->getNext())
+        tempEntry2->getNext()->setPrevious(tempEntry2);
+        else
+        rListStart = tempEntry2;
+      }
+      delete tempEntry1;
+      return true;
+    }
+    return false;
+  }
+\end{lstlisting}
+
+Die Rückgabe der Methode meldet, ob das Element gefunden und entsorgt wurde.
+
 \end{document}
