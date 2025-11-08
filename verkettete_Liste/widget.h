@@ -2,7 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include "verwaltung.h"
+#include "modeldata.h"
 
 namespace Ui {
 class Widget;
@@ -36,7 +36,7 @@ private slots:
 private:
     Ui::Widget *ui;
 
-    Verwaltung *myVerwalung;
+    ModelData *myVerwalung;
 };
 
 #endif // WIDGET_H
