@@ -1,20 +1,21 @@
-#ifndef WIDGET_H
-#define WIDGET_H
+#ifndef GUIWIDGET_H
+#define GUIWIDGET_H
 
 #include <QWidget>
-#include "modeldata.h"
+//#include "modeldata.h"
+#include "controller.h"
 
 namespace Ui {
 class Widget;
 }
 
-class Widget : public QWidget
+class GuiWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget *parent = 0);
-    ~Widget();
+    explicit GuiWidget(QWidget *parent = 0);
+    ~GuiWidget();
 
 private slots:
     void appendEntry();
@@ -36,7 +37,8 @@ private slots:
 private:
     Ui::Widget *ui;
 
-    ModelData *myVerwalung;
+    std::unique_ptr<Controller> myController;
+    //ModelData *myVerwalung;
 };
 
-#endif // WIDGET_H
+#endif // GUIWIDGET_H
