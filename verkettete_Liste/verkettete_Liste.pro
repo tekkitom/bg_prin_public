@@ -13,12 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    controller.cpp \
+    guiwidget.cpp \
     modeldata.cpp \
-        widget.cpp \
     element.cpp
 
-HEADERS  += widget.h \
+HEADERS  += \
+    controller.h \
     element.h \
+    guiwidget.h \
     modeldata.h
 
-FORMS    += widget.ui
+FORMS    += \
+    guiwidget.ui
