@@ -22,7 +22,7 @@ private:
     const Entry *findEntry(QString nameIn);
 
     Entry *fListStart;
-    Entry *rListStart;
+    // Entry *rListStart;
     Entry *currentEntry;
 };
 
