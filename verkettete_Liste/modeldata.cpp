@@ -40,7 +40,7 @@ bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
         if(nullptr != fListStart)
         {
             newEntry->setNext(fListStart);
-            fListStart->setPrevious(newEntry);
+            // fListStart->setPrevious(newEntry);
             fListStart = newEntry;
             newEntry = nullptr;
             retValue = true;
@@ -159,14 +159,14 @@ bool ModelData::removeEntry(QString nameIn)
         if(fListStart == tempEntry1)
         {
             fListStart = tempEntry1->getNext();
-            if(nullptr != fListStart)
-                fListStart->setPrevious(nullptr);
+            // if(nullptr != fListStart)
+                // fListStart->setPrevious(nullptr);
         }
         else
         {
             tempEntry2->setNext(tempEntry1->getNext());
-            if(nullptr != tempEntry2->getNext())
-                tempEntry2->getNext()->setPrevious(tempEntry2);
+            // if(nullptr != tempEntry2->getNext())
+                // tempEntry2->getNext()->setPrevious(tempEntry2);
         }
         delete tempEntry1;
         currentEntry = nullptr;

@@ -16,15 +16,15 @@ public:
     Entry *getNext() const;
     void setNext(Entry *value);
 
-    Entry *getPrevious() const;
-    void setPrevious(Entry *newPrevious);
+    // Entry *getPrevious() const;
+    // void setPrevious(Entry *newPrevious);
 
 private:
     QString name;
     QString telNr;
 
     Entry *next;
-    Entry *previous;
+    // Entry *previous;
 };
 
 #endif // ELEMENT_H

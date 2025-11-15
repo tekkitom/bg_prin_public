@@ -16,13 +16,12 @@ public:
 
     bool removeEntry(QString nameIn);
     bool changeEntry(QString nameAlt, QString nameNeu, QString telNeu);
-    void firstEntry();//QString &name, QString &telNr);
-    void nextEntryForward();//QString nameVorgaenger, QString &name, QString &telNr);
+    void firstEntry();
+    void nextEntryForward();
 private:
     const Entry *findEntry(QString nameIn);
 
     Entry *fListStart;
-    // Entry *rListStart;
     Entry *currentEntry;
 };
 
