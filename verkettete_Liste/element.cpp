@@ -3,7 +3,7 @@
 Entry::Entry()
 {
     next = nullptr;
-    previous = nullptr;
+    // previous = nullptr;
 }
 
 QString Entry::getTelNr()
@@ -26,15 +26,15 @@ void Entry::setNext(Entry *value)
     next = value;
 }
 
-Entry *Entry::getPrevious() const
-{
-    return previous;
-}
+// Entry *Entry::getPrevious() const
+// {
+//     return previous;
+// }
 
-void Entry::setPrevious(Entry *newPrevious)
-{
-    previous = newPrevious;
-}
+// void Entry::setPrevious(Entry *newPrevious)
+// {
+//     previous = newPrevious;
+// }
 
 QString Entry::getName()
 {
