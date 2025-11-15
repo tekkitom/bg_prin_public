@@ -3,7 +3,7 @@
 ModelData::ModelData()
 {
     fListStart = nullptr;
-    rListStart = nullptr;
+    // rListStart = nullptr;
     currentEntry = nullptr;
 }
 
@@ -21,11 +21,6 @@ bool ModelData::getValuesCurrentEntry(QString &name, QString &telNr)
 void ModelData::firstEntry()
 {
     currentEntry = fListStart;
-    // if( nullptr != fListStart)
-    // {
-    //     name = fListStart->getName();
-    //     telNr = fListStart->getTelNr();
-    // }
 }
 
 bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
@@ -36,10 +31,10 @@ bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
     newEntry->setName(nameIn);
     newEntry->setTelNr(telIn);
 
-    if(nullptr == fListStart && nullptr == rListStart)
+    if(nullptr == fListStart)// && nullptr == rListStart)
     {
         fListStart = newEntry;
-        rListStart = newEntry;
+        // rListStart = newEntry;
         retValue = true;
     }
     else
@@ -65,32 +60,33 @@ bool ModelData::insertNewEntryBack(QString nameIn, QString telIn)
     newEntry->setName(nameIn);
     newEntry->setTelNr(telIn);
 
-    if(nullptr == fListStart && nullptr == rListStart)
+    if(nullptr == fListStart)// && nullptr == rListStart)
     {
         fListStart = newEntry;
-        rListStart = newEntry;
+        // rListStart = newEntry;
         retValue = true;
     }
     else
     {
-        if(nullptr != rListStart)
+        // if(nullptr != rListStart)
+        // {
+        //     newEntry->setPrevious(rListStart);
+        //     rListStart->setNext(newEntry);
+        //     rListStart = newEntry;
+        //     newEntry = nullptr;
+        //     retValue = true;
+        // }
+        currentEntry = fListStart;
+
+        while(nullptr != currentEntry->getNext())
         {
-            newEntry->setPrevious(rListStart);
-            rListStart->setNext(newEntry);
-            rListStart = newEntry;
-            newEntry = nullptr;
-            retValue = true;
+            currentEntry = currentEntry->getNext();
         }
 
-        // while(nullptr != tempPtrToEntry1->getNext())
-        // {
-        //     tempPtrToEntry1 = tempPtrToEntry1->getNext();
-        // }
-
-        // if(nullptr != tempPtrToEntry1)
-        // {
-        //     tempPtrToEntry1->setNext(newEntry);
-        // }
+        if(nullptr != currentEntry)
+        {
+            currentEntry->setNext(newEntry);
+        }
     }
 
     return retValue;
@@ -176,16 +172,16 @@ bool ModelData::removeEntry(QString nameIn)
             fListStart = tempEntry1->getNext();
             if(nullptr != fListStart)
                 fListStart->setPrevious(nullptr);
-            if(rListStart == tempEntry1)
-                rListStart = nullptr;
+            // if(rListStart == tempEntry1)
+            //     rListStart = nullptr;
         }
         else
         {
             tempEntry2->setNext(tempEntry1->getNext());
             if(nullptr != tempEntry2->getNext())
                 tempEntry2->getNext()->setPrevious(tempEntry2);
-            else
-                rListStart = tempEntry2;
+            // else
+            //     rListStart = tempEntry2;
         }
         delete tempEntry1;
         currentEntry = nullptr;

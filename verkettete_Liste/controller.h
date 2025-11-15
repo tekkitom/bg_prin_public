@@ -10,7 +10,7 @@ public:
     Controller();
 
     void goToFirstEntry();
-    // void goToLastEntry();
+    void goToLastEntry();
     void stepToNextEntryForward();
     void stepToNextEntryBackward();
     bool getCurrentEntryValues(QString &name, QString &telNr);

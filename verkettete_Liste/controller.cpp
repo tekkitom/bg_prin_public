@@ -6,16 +6,13 @@ Controller::Controller() {
 
 void Controller::goToFirstEntry()
 {
-    // QString name;
-    // QString telNr;
     myData->firstEntry();
-    // myData->getValuesCurrentEntry(name, telNr);
 }
 
-// void Controller::goToLastEntry()
-// {
+void Controller::goToLastEntry()
+{
 
-// }
+}
 
 void Controller::stepToNextEntryForward()
 {
