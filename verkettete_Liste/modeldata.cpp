@@ -3,7 +3,6 @@
 ModelData::ModelData()
 {
     fListStart = nullptr;
-    // rListStart = nullptr;
     currentEntry = nullptr;
 }
 
@@ -31,10 +30,9 @@ bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
     newEntry->setName(nameIn);
     newEntry->setTelNr(telIn);
 
-    if(nullptr == fListStart)// && nullptr == rListStart)
+    if(nullptr == fListStart)
     {
         fListStart = newEntry;
-        // rListStart = newEntry;
         retValue = true;
     }
     else
@@ -60,22 +58,13 @@ bool ModelData::insertNewEntryBack(QString nameIn, QString telIn)
     newEntry->setName(nameIn);
     newEntry->setTelNr(telIn);
 
-    if(nullptr == fListStart)// && nullptr == rListStart)
+    if(nullptr == fListStart)
     {
         fListStart = newEntry;
-        // rListStart = newEntry;
         retValue = true;
     }
     else
     {
-        // if(nullptr != rListStart)
-        // {
-        //     newEntry->setPrevious(rListStart);
-        //     rListStart->setNext(newEntry);
-        //     rListStart = newEntry;
-        //     newEntry = nullptr;
-        //     retValue = true;
-        // }
         currentEntry = fListStart;
 
         while(nullptr != currentEntry->getNext())
@@ -172,16 +161,12 @@ bool ModelData::removeEntry(QString nameIn)
             fListStart = tempEntry1->getNext();
             if(nullptr != fListStart)
                 fListStart->setPrevious(nullptr);
-            // if(rListStart == tempEntry1)
-            //     rListStart = nullptr;
         }
         else
         {
             tempEntry2->setNext(tempEntry1->getNext());
             if(nullptr != tempEntry2->getNext())
                 tempEntry2->getNext()->setPrevious(tempEntry2);
-            // else
-            //     rListStart = tempEntry2;
         }
         delete tempEntry1;
         currentEntry = nullptr;
@@ -219,19 +204,11 @@ const Entry *ModelData::findEntry(QString nameIn)
 }
 
 
-void ModelData::nextEntryForward()//QString nameVorgaenger, QString &name, QString &telNr)
+void ModelData::nextEntryForward()
 {
-    // Entry * tempEntry1 = const_cast<Entry *>(findEntry(nameVorgaenger));
     if(!currentEntry)
         currentEntry = fListStart;
 
     if(nullptr != currentEntry && nullptr != currentEntry->getNext())
         currentEntry = currentEntry->getNext();
-
-    // if(nullptr != currentEntry)
-    // {
-    //     // name = tempEntry1->getName();
-    //     // telNr = tempEntry1->getTelNr();
-    //     currentEntry = tempEntry1;
-    // }
 }
