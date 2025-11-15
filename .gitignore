@@ -1,0 +1,8 @@
+/Arbeitsmaterialien_q-phase/.kile/prinarticle.kilepr.gui
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.user
+*/build/*
