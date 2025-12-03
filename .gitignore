@@ -6,3 +6,6 @@
 *.toc
 *.user
 */build/*
+*.nav
+*.snm
+*vrb
