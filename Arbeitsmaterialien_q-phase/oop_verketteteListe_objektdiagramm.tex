@@ -257,5 +257,28 @@ private:
  \end{lstlisting}
 \end{frame}
 
+\begin{frame}{Ring-Puffer}
+ \begin{itemize}
+  \item Array ist linear.
+  \item Problem: Kontinuierliche Messwerte, \\
+  alte werden automatich überschrieben.
+  \item logisch: Ring
+  \item zwei ``Zeiger'' (schreiben / lesen)
+  \pause
+  \item reale Struktur: Array (in der Regel)
+ \end{itemize}
+\end{frame} 
+
+\begin{frame}{Realisierung}
+ \begin{itemize}
+  \item Array für Werte (z.B. Array für Int)
+  \item Zeiger lesen und Zeiger schreiben
+  \item Lesen darf schreiben nicht überholen
+  \item Wenn schreiben am Ende des Arrays ist, \\
+  Sprung auf Pos 0. Ggf. Lese-Zeiger verschieben.
+ \end{itemize}
+\end{frame}
+
+
 
 \end{document}
