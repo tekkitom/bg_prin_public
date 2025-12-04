@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="ringpuffer1.svg"
+   inkscape:export-filename="ringpuffer7.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="0.78796296"
+     inkscape:cx="621.22209"
+     inkscape:cy="540"
+     inkscape:window-width="1920"
+     inkscape:window-height="1111"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer8">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1"
+       transform="translate(-2.5381904,-2.5381904)">
+      <circle
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         id="path1"
+         cx="431.49237"
+         cy="409.91776"
+         r="285.51343" />
+      <circle
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         id="path1-8"
+         cx="431.49237"
+         cy="409.91776"
+         r="208.19252" />
+    </g>
+    <g
+       id="g4">
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 428.95418,120.17039 v 78.6839"
+         id="path2-0" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="M 557.50791,148.71389 527.3969,221.40833"
+         id="path2-1-28" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 642.83777,212.50772 -55.63792,55.63792"
+         id="path2-2-6" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 700.98423,311.03498 -72.69455,30.11101"
+         id="path2-23-0" />
+    </g>
+    <g
+       id="g4-8"
+       transform="rotate(90,430.29998,408.42532)">
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 428.95418,120.17039 v 78.6839"
+         id="path2-0-4" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="M 557.50791,148.71389 527.3969,221.40833"
+         id="path2-1-28-9" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 642.83777,212.50772 -55.63792,55.63792"
+         id="path2-2-6-6" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 700.98423,311.03498 -72.69455,30.11101"
+         id="path2-23-0-3" />
+    </g>
+    <g
+       id="g4-9"
+       transform="rotate(180,431.63252,408.77726)">
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 428.95418,120.17039 v 78.6839"
+         id="path2-0-1" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="M 557.50791,148.71389 527.3969,221.40833"
+         id="path2-1-28-3" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 642.83777,212.50772 -55.63792,55.63792"
+         id="path2-2-6-5" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 700.98423,311.03498 -72.69455,30.11101"
+         id="path2-23-0-9" />
+    </g>
+    <g
+       id="g4-6"
+       transform="rotate(-90,430.90045,405.60511)">
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 428.95418,120.17039 v 78.6839"
+         id="path2-0-3" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="M 557.50791,148.71389 527.3969,221.40833"
+         id="path2-1-28-6" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 642.83777,212.50772 -55.63792,55.63792"
+         id="path2-2-6-1" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+         d="m 700.98423,311.03498 -72.69455,30.11101"
+         id="path2-23-0-5" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Ebene 2"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="484.79437"
+       y="97.720329"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         x="484.79437"
+         y="97.720329">L, S</tspan></text>
+    <path
+       id="path6"
+       style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 442.12132,80 20,20 20,-20 m -20,-80 v 100" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Ebene 3"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="643.82812"
+       y="154.25"
+       id="text4-7"><tspan
+         sodipodi:role="line"
+         id="tspan4-3"
+         x="643.82812"
+         y="154.25">S</tspan></text>
+    <path
+       id="path6-7"
+       style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 601.15507,136.52966 20,20 20,-20 m -20,-79.999997 v 99.999997" />
+    <g
+       id="layer2-1"
+       transform="translate(387.87868,190)"
+       style="display:inline">
+      <g
+         id="g6"
+         transform="translate(-370,-190)">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           x="484.79437"
+           y="97.720329"
+           id="text4-6"><tspan
+             sodipodi:role="line"
+             id="tspan4-5"
+             x="484.79437"
+             y="97.720329">L</tspan></text>
+        <path
+           id="path6-75"
+           style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           d="m 442.12132,80 20,20 20,-20 m -20,-80 v 100" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="780"
+       y="100"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         x="780"
+         y="100"></tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Ebene 4"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="520"
+       y="800"
+       id="text4-7-0"><tspan
+         sodipodi:role="line"
+         id="tspan4-3-1"
+         x="520"
+         y="800">S</tspan></text>
+    <path
+       id="path6-7-4"
+       style="display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 460,730 20,-20 20,20 m -20,80 V 710" />
+    <g
+       id="layer2-1-6"
+       transform="translate(387.87868,200)"
+       style="display:inline">
+      <g
+         id="g6-0"
+         transform="translate(-370,-190)">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           x="484.79437"
+           y="97.720329"
+           id="text4-6-7"><tspan
+             sodipodi:role="line"
+             id="tspan4-5-1"
+             x="484.79437"
+             y="97.720329">L</tspan></text>
+        <path
+           id="path6-75-7"
+           style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           d="m 442.12132,80 20,20 20,-20 m -20,-80 v 100" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Ebene 5"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="280"
+       y="100"
+       id="text4-7-3"><tspan
+         sodipodi:role="line"
+         id="tspan4-3-5"
+         x="280"
+         y="100">S</tspan></text>
+    <path
+       id="path6-7-9"
+       style="display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 247.07107,115.35534 h 28.28427 V 87.07107 m -70.71068,-42.42641 70.71068,70.71068" />
+    <g
+       id="layer2-1-9"
+       transform="translate(407.87868,190)"
+       style="display:inline">
+      <g
+         id="g6-8"
+         transform="translate(-370,-190)">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           x="484.79437"
+           y="97.720329"
+           id="text4-6-1"><tspan
+             sodipodi:role="line"
+             id="tspan4-5-8"
+             x="484.79437"
+             y="97.720329">L</tspan></text>
+        <path
+           id="path6-75-2"
+           style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           d="m 442.12132,80 20,20 20,-20 m -20,-80 v 100" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="Ebene 6"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="312.76932"
+       y="89.883263"
+       id="text4-7-8"><tspan
+         sodipodi:role="line"
+         id="tspan4-3-0"
+         x="312.76932"
+         y="89.883263">S</tspan></text>
+    <path
+       id="path6-7-1"
+       style="display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 380,70 20,20 20,-20 M 400,-10 V 90" />
+    <g
+       id="layer2-1-2"
+       transform="translate(387.87868,190)"
+       style="display:inline">
+      <g
+         id="g6-5"
+         transform="translate(-370,-190)">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           x="484.79437"
+           y="97.720329"
+           id="text4-6-0"><tspan
+             sodipodi:role="line"
+             id="tspan4-5-9"
+             x="484.79437"
+             y="97.720329">L</tspan></text>
+        <path
+           id="path6-75-4"
+           style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+           d="m 442.12132,80 20,20 20,-20 m -20,-80 v 100" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="Ebene 7">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="412.76929"
+       y="99.88327"
+       id="text4-7-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan4-3-0-2"
+         x="412.76929"
+         y="99.88327">S</tspan></text>
+    <path
+       id="path6-7-1-0"
+       style="display:inline;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 480,80 20,20 20,-20 M 500,0 v 100" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:96px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       x="672.95215"
+       y="147.79512"
+       id="text4-6-0-4"><tspan
+         sodipodi:role="line"
+         id="tspan4-5-9-0"
+         x="672.95215"
+         y="147.79512">L</tspan></text>
+    <path
+       id="path6-75-4-6"
+       style="fill:none;stroke:#000080;stroke-width:6;stroke-dasharray:none"
+       d="m 619.01923,116.33975 7.32051,27.3205 27.32051,-7.3205 m 22.67949,-79.282034 -50,86.602534" />
+  </g>
+</svg>
