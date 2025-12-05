@@ -1,0 +1,46 @@
+\section{Objektreferenz}
+
+
+\begin{itemize}
+  \item Ein Array mit Pointern (als Attribut der Klasse)
+  \item Verweis auf Objekte (auf dem Heap)
+  \item Umsortieren ist einfach, da nur Pointer kopiert werden.
+ \end{itemize}
+
+  \begin{lstlisting}
+  class DataModel
+{
+public:
+    DataModel();
+    static const unsigned short arraySizeEntry = 20;
+    void insertEntry(int pos, int val);
+    void removeEntry(int pos);
+    int findEntryPos(int pos);
+    int findEntryVal(int val);
+    bool appendEntryBack(int val);
+
+private:
+    Entry* entryAray[arraySizeEntry];///< Links auf die Objekte
+                                     // in der Warteschlange.
+};
+ \end{lstlisting}
+
+
+ \begin{itemize}
+  \item Array ist linear.
+  \item Problem: Kontinuierliche Messwerte, \\
+  alte werden automatich überschrieben.
+  \item logisch: Ring
+  \item zwei ``Zeiger'' (schreiben / lesen)
+  
+  \item reale Struktur: Array (in der Regel)
+ \end{itemize}
+ 
+
+ \begin{itemize}
+  \item Array für Werte (z.B. Array für Int)
+  \item Zeiger lesen und Zeiger schreiben
+  \item Lesen darf schreiben nicht überholen
+  \item Wenn schreiben am Ende des Arrays ist, \\
+  Sprung auf Pos 0. Ggf. Lese-Zeiger verschieben.
+ \end{itemize}
