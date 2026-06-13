@@ -2,8 +2,8 @@
 
 ModelData::ModelData()
 {
-    fListStart = nullptr;
-    currentEntry = nullptr;
+    // fListStart = nullptr;
+    // currentEntry = nullptr;
 }
 
 bool ModelData::getValuesCurrentEntry(QString &name, QString &telNr)
@@ -24,7 +24,7 @@ void ModelData::firstEntry()
 
 bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
 {
-    Entry * newEntry = new Entry;
+    shared_ptr<Entry> newEntry(new Entry());
     bool retValue = false;
 
     newEntry->setName(nameIn);
@@ -52,7 +52,7 @@ bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
 
 bool ModelData::insertNewEntryBack(QString nameIn, QString telIn)
 {
-    Entry * newEntry = new Entry;
+    shared_ptr<Entry> newEntry(new Entry());
     bool retValue = false;
 
     newEntry->setName(nameIn);
@@ -83,8 +83,8 @@ bool ModelData::insertNewEntryBack(QString nameIn, QString telIn)
 
 bool ModelData::insertNewEntryMidAfterCurrent(QString NameNach, QString nameIn, QString telIn)
 {
-    Entry * tempEntry1 = fListStart;
-    Entry * newEntry = new Entry;
+    shared_ptr<Entry> tempEntry1 = fListStart;
+    shared_ptr<Entry> newEntry(new Entry());
     bool retValue = false;
 
     newEntry->setName(nameIn);
@@ -106,15 +106,14 @@ bool ModelData::insertNewEntryMidAfterCurrent(QString NameNach, QString nameIn, 
 
 bool ModelData::insertNewEntryBeforeCurrent(QString nameVor, QString nameIn, QString telIn)
 {
-    Entry * tempEntry2 = fListStart;
-    Entry * newEntry = new Entry;
+    shared_ptr<Entry> tempEntry2 = fListStart;
+    shared_ptr<Entry> newEntry(new Entry());
     bool retValue = false;
 
     newEntry->setName(nameIn);
     newEntry->setTelNr(telIn);
 
-    currentEntry = fListStart;
-
+    // leere Liste
     if(!fListStart)
     {
         fListStart = newEntry;
@@ -122,21 +121,33 @@ bool ModelData::insertNewEntryBeforeCurrent(QString nameVor, QString nameIn, QSt
         retValue = true;
     }
     else{
-        while((nullptr != currentEntry->getNext())
-               && (0 != currentEntry->getName().compare(nameVor)))
+        //vor ersten Eintrag forward
+        if(0 == fListStart->getName().compare(nameVor))
         {
-            tempEntry2 = currentEntry;
-            currentEntry = currentEntry->getNext();
+            newEntry->setNext(fListStart);
+            fListStart = newEntry;
+            currentEntry = fListStart;
         }
-
-        if(nullptr != currentEntry)
+        // in der Liste einfuegen
+        else
         {
-            newEntry->setNext(currentEntry);
-            if(fListStart != tempEntry2)
+            currentEntry = fListStart;
+            while((nullptr != currentEntry->getNext())
+                   && (0 != currentEntry->getName().compare(nameVor)))
+            {
+                tempEntry2 = currentEntry;
+                currentEntry = currentEntry->getNext();
+            }
+
+            if(nullptr != currentEntry)
+            {
+                newEntry->setNext(currentEntry);
+                // if(fListStart != tempEntry2)
                 tempEntry2->setNext(newEntry);
-            else
-                fListStart = newEntry;
-            retValue = true;
+                // else
+                //     fListStart = newEntry;
+                retValue = true;
+            }
         }
     }
     return retValue;
@@ -144,8 +155,8 @@ bool ModelData::insertNewEntryBeforeCurrent(QString nameVor, QString nameIn, QSt
 
 bool ModelData::removeEntry(QString nameIn)
 {
-    Entry * tempEntry1 = fListStart;
-    Entry * tempEntry2 = fListStart; //Vorgaenger
+    shared_ptr<Entry> tempEntry1 = fListStart;
+    shared_ptr<Entry> tempEntry2 = fListStart; //Vorgaenger
     bool retValue = false;
 
     while((nullptr != tempEntry1) && (0 != tempEntry1->getName().compare(nameIn)))
@@ -160,15 +171,14 @@ bool ModelData::removeEntry(QString nameIn)
         {
             fListStart = tempEntry1->getNext();
             // if(nullptr != fListStart)
-                // fListStart->setPrevious(nullptr);
+            // fListStart->setPrevious(nullptr);
         }
         else
         {
             tempEntry2->setNext(tempEntry1->getNext());
             // if(nullptr != tempEntry2->getNext())
-                // tempEntry2->getNext()->setPrevious(tempEntry2);
+            // tempEntry2->getNext()->setPrevious(tempEntry2);
         }
-        delete tempEntry1;
         currentEntry = nullptr;
         retValue = true;
     }
@@ -177,10 +187,10 @@ bool ModelData::removeEntry(QString nameIn)
 
 bool ModelData::changeEntry(QString nameAlt, QString nameNeu, QString telNeu)
 {
-    Entry * tempEntry1;
+    shared_ptr<Entry> tempEntry1;
     bool retValue = false;
 
-    tempEntry1 = const_cast<Entry *>(findEntry(nameAlt));
+    tempEntry1 = findEntry(nameAlt);
     if( nullptr != tempEntry1)
     {
         tempEntry1->setName(nameNeu);
@@ -191,9 +201,9 @@ bool ModelData::changeEntry(QString nameAlt, QString nameNeu, QString telNeu)
     return retValue;
 }
 
-const Entry *ModelData::findEntry(QString nameIn)
+const shared_ptr<Entry> ModelData::findEntry(QString nameIn)
 {
-    Entry *tempEntry1 = fListStart;
+    shared_ptr<Entry> tempEntry1 = fListStart;
 
     while((nullptr != tempEntry1) && (0 != tempEntry1->getName().compare(nameIn)))
     {

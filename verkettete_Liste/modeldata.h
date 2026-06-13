@@ -2,6 +2,7 @@
 #define MODELDATA_H
 
 #include "element.h"
+using namespace std;
 
 class ModelData
 {
@@ -19,10 +20,10 @@ public:
     void firstEntry();
     void nextEntryForward();
 private:
-    const Entry *findEntry(QString nameIn);
+    const shared_ptr<Entry>findEntry(QString nameIn);
 
-    Entry *fListStart;
-    Entry *currentEntry;
+    shared_ptr<Entry> fListStart;
+    shared_ptr<Entry>currentEntry;
 };
 
 #endif // MODELDATA_H

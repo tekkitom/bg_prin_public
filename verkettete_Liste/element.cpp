@@ -2,7 +2,7 @@
 
 Entry::Entry()
 {
-    next = nullptr;
+    // next = nullptr;
     // previous = nullptr;
 }
 
@@ -16,25 +16,25 @@ void Entry::setTelNr(QString value)
     telNr = value;
 }
 
-Entry *Entry::getNext() const
+std::shared_ptr<Entry> Entry::getNext() const
 {
     return next;
 }
 
-void Entry::setNext(Entry *value)
+void Entry::setNext(std::shared_ptr<Entry> value)
 {
     next = value;
 }
 
-// Entry *Entry::getPrevious() const
-// {
-//     return previous;
-// }
+std::shared_ptr<Entry> Entry::getPrevious() const
+{
+    return previous;
+}
 
-// void Entry::setPrevious(Entry *newPrevious)
-// {
-//     previous = newPrevious;
-// }
+void Entry::setPrevious(std::shared_ptr<Entry> newPrevious)
+{
+    previous = newPrevious;
+}
 
 QString Entry::getName()
 {
