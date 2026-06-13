@@ -38,7 +38,6 @@ private:
     Ui::Widget *ui;
 
     std::unique_ptr<Controller> myController;
-    //ModelData *myVerwalung;
 };
 
 #endif // GUIWIDGET_H

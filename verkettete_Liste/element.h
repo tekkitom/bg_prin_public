@@ -13,18 +13,18 @@ public:
     QString getTelNr();
     void setTelNr(QString value);
 
-    Entry *getNext() const;
-    void setNext(Entry *value);
+    std::shared_ptr<Entry> getNext() const;
+    void setNext(std::shared_ptr<Entry> value);
 
-    // Entry *getPrevious() const;
-    // void setPrevious(Entry *newPrevious);
+    std::shared_ptr<Entry> getPrevious() const;
+    void setPrevious(std::shared_ptr<Entry> newPrevious);
 
 private:
     QString name;
     QString telNr;
 
-    Entry *next;
-    // Entry *previous;
+    std::shared_ptr<Entry> next;
+    std::shared_ptr<Entry> previous;
 };
 
 #endif // ELEMENT_H
