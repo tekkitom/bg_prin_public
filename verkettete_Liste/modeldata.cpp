@@ -24,7 +24,7 @@ void ModelData::firstEntry()
 
 bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
 {
-    shared_ptr<Entry> newEntry(new Entry());
+    shared_ptr<Entry> newEntry = make_shared<Entry>();
     bool retValue = false;
 
     newEntry->setName(nameIn);
@@ -52,7 +52,7 @@ bool ModelData::insertNewEntryFront(QString nameIn, QString telIn)
 
 bool ModelData::insertNewEntryBack(QString nameIn, QString telIn)
 {
-    shared_ptr<Entry> newEntry(new Entry());
+    shared_ptr<Entry> newEntry = make_shared<Entry>();
     bool retValue = false;
 
     newEntry->setName(nameIn);
@@ -84,7 +84,7 @@ bool ModelData::insertNewEntryBack(QString nameIn, QString telIn)
 bool ModelData::insertNewEntryMidAfterCurrent(QString NameNach, QString nameIn, QString telIn)
 {
     shared_ptr<Entry> tempEntry1 = fListStart;
-    shared_ptr<Entry> newEntry(new Entry());
+    shared_ptr<Entry> newEntry = make_shared<Entry>();
     bool retValue = false;
 
     newEntry->setName(nameIn);
@@ -107,7 +107,7 @@ bool ModelData::insertNewEntryMidAfterCurrent(QString NameNach, QString nameIn, 
 bool ModelData::insertNewEntryBeforeCurrent(QString nameVor, QString nameIn, QString telIn)
 {
     shared_ptr<Entry> tempEntry2 = fListStart;
-    shared_ptr<Entry> newEntry(new Entry());
+    shared_ptr<Entry> newEntry = make_shared<Entry>();
     bool retValue = false;
 
     newEntry->setName(nameIn);
